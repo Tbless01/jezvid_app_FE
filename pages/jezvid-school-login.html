@@ -2105,7 +2105,8 @@
 
 
 <script>
-    const API_BASE_URL = 'http://localhost:8800/jezvid/v1/api';
+    // const API_BASE_URL = 'http://localhost:8800/jezvid/v1/api';
+    const API_BASE_URL = 'https://jezvid-school-management-app.onrender.com/jezvid/v1/api';
     let authToken = '';
     let currentPage = 0;
     let allPupils = [];
@@ -2624,8 +2625,9 @@
             const currentSession = document.getElementById('sessionSelect').value;
             const currentTerm = document.getElementById('termSelect').value;
             // term=${encodeURIComponent(currentTerm)}&session=${encodeURIComponent(currentSession)}
-            const response = await fetch(`http://localhost:8800/jezvid/v1/api/payments/pupil/${pupilId}?`, {
-                method: 'GET',
+            // const response = await fetch(`http://localhost:8800/jezvid/v1/api/payments/pupil/${pupilId}?`, {
+            const response = await fetch(`https://jezvid-school-management-app.onrender.com/jezvid/v1/api/payments/pupil/${pupilId}?`, {
+            method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${savedToken}`,
                     'Content-Type': 'application/json'
